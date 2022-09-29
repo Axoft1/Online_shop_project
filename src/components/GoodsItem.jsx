@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
-// import Col from "react-bootstrap/Col";
-
+import { ShopContext } from "../context";
+import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 
 function GoodsItem(props) {
@@ -11,8 +11,8 @@ function GoodsItem(props) {
     price,
     displayAssets,
     displayType,
-    addToBasket = Function.prototype,
   } = props;
+  const {addToBasket} = useContext(ShopContext)
 
   return (    
   <Card  key={mainId} style={{ width: "18rem" }}>

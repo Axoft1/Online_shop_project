@@ -106,7 +106,7 @@ margin: 1rem;
   .basket-list{
     width: 400px;
     position: fixed;
-    top: 45%;
+    top: 50%;
     left: 60%;
     margin: -300px 0 0 -240px;
   }

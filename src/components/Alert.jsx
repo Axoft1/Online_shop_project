@@ -1,24 +1,20 @@
 import React from "react";
-// import Alert from "react-bootstrap/Alert";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { ShopContext } from "../context";
 
-function InfoAlert(props) {
-  const { name = "", closeAlert = Function.prototype } = props;
+function InfoAlert() {
+  const { name = "", closeAlert } = useContext(ShopContext);
 
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);
     return () => {
-        clearTimeout(timerId)
-    }
-    
+      clearTimeout(timerId);
+    };
+
     //eslint-disable-next-line
   }, [name]);
 
-  return (
-    <div className="alert_castom" >
-      "{name}" Добавлен в козину
-    </div>
-  );
+  return <div className="alert_castom">"{name}" Добавлен в козину</div>;
 }
 
 export { InfoAlert };
